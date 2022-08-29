@@ -14,20 +14,24 @@ class cfgPatches {
 };
 
 class Extended_PostInit_EventHandlers {  // put these files in the same folder as this config
-	class camoCoefKey { // only required if you want the 
+	class camoCoefKey {
 		init = "spawn CamoSwapDemo_github_fnc_camoCoef_Key";
 	};
 	class camoCoefMod {
 		init = "spawn CamoSwapDemo_github_fnc_camoCoefMod";
 	};
+	class camoWL {
+		init = "spawn CamoSwapDemo_github_fnc_camoWL_Key";
+	};
 };
 
 class cfgFunctions {
-	class CamoSwapDemo_github { // this portion is only necessary if you want to use the auto camo swap keybind in your mod, which is very wip and very not well made
+	class CamoSwapDemo_github {
 		class Keys {
 			file="\CamoSwapDemo\";
 			class camoCoef_Key {};
 			class camoCoefMod {};
+			class camoWL_Key {};
 		};
 	};
 };
