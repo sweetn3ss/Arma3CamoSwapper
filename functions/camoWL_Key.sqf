@@ -1,0 +1,3 @@
+compatibleVests = [];
+
+compatibleHelmets = [];
