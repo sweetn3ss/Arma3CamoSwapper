@@ -28,68 +28,10 @@ params [
 // #################
 //
 // These constants are related to the setup of the mod(s) and the naming scheme of items
-private	_armorTextureRoot    = "82nd_Armor\data\armors";
-private	_backpackTextureRoot = "82nd_Backpacks\data";
-private	_unitTexturePrefix   = "82nd";
+private	_armorTextureRoot    = ""; // folder in which the Uniforms folder lives.
+private	_backpackTextureRoot = ""; // folder in which backpack textures live. ex: "82nd_Radio_Packs\data" subfolders should be backpack types
+private	_unitTexturePrefix   = ""; // change to mod or unit classname prefix. ex: "82nd"
 
-// ###############################
-// ### Compatibility Constants ###
-// ###############################
-//
-// These arrays define all items that the script will operate on.
-// This idiot-proofs the script so as not to delete items and try to replace them with those that don't exist
-// AKA if an item isn't specified in these lists, NOTHING happens on runtime.
-
-private _compatibleUniforms = [
-	"82nd_BDU_Morph_BASE",
-	"82nd_BDU_Morph_ROLLED",
-	"82nd_BDU_Morph_Short"
-];
-
-private _compatibleBackpacks = [
-	"82nd_ANPRC_521_BLK",
-	"82nd_ANPRC_521C_BLK",
-	"82nd_ANPRC_521M_BLK",
-	"82nd_ILCS_Rifleman_BLK",
-	"82nd_ILCS_Corpsman_BLK",
-	"82nd_ILCS_PJ_BLK",
-	"82nd_ILCS_Heavy_BLK",
-	// start custom backpacks
-	"82nd_ANPRC_Max_BLK",
-	"82nd_ILCS_Saint_BLK",
-	"82nd_ANPRC_Saint_BLK",
-	"82nd_ANPRC_Blue_BLK"
-];
-
-private _compatibleFW =
-[
-	"82nd_Bala_G_BLK",
-	"82nd_Bala_BeastNoG_BLK",
-	"82nd_Bala_BeastG_BLK",
-	"82nd_Bala_NoG_BLK",
-	"82nd_Scarf_SmartDown_BLK",
-	"82nd_Scarf_SmartUp_BLK"
-];
-
-private _compatibleHMD = 
-[
-	"82nd_CatHMD_Base_BLK",
-	"82nd_ScarfHMD_SmartDown_BLK",
-	"82nd_ScarfHMD_SmartUp_BLK"
-];
-
-// Only add BLK versions of the gun
-private _compatibleRifles = [
-	"82nd_MA5B_Experimental_BLK",
-	"82nd_MA5C_Experimental_BLK",
-	"82nd_MA5BGL_Experimental_BLK",
-	"82nd_MA5CGL_Experimental_BLK",
-	"82nd_BR55X_Rifleman_BLK",
-	"82nd_BR55XHB_Rifleman_BLK",
-	"82nd_M392X_Experimental_BLK",
-	"82nd_M28A2_Experimental_BLK",
-	"82nd_VK78_Rifleman_BLK"
-];
 
 // ### Begin ###
 private _currentUniform  = uniform _unit;
@@ -124,8 +66,9 @@ switch (_selectedCamoType) do {
 // ###############
 //
 // The uniform texture is swapped (for compatible uniforms)
+// if intended uniform uses more or less than two texture paths for its texture, this portion of the script will need to be modified to accommodate such.
 if !(_currentUniform == "") then {
-	if (_compatibleUniforms find _currentUniform != -1) then {
+	if (camoSwapCompatibleUniforms find _currentUniform != -1) then {
 		private _uniformTempArray = [_currentUniform, "_"] call BIS_fnc_splitString;
 		private _uniformVariant   = _uniformTempArray # 3; // BASE, ROLLED
 		
@@ -157,7 +100,7 @@ if !(_currentVest == "") then {
 	// Reconstruct vest into default camo version for the check
 	private _vestBLK = format ["%1_%2_%3_BLK", _unitTexturePrefix, _vestType, _vestSubtype];;
 	
-	if (compatibleVests find _vestBLK != -1) then {			
+	if (camoSwapCompatibleVests find _vestBLK != -1) then {			
 		if (_vestType == "M52A" || _vestType == "M52D") then {
 			private _vestTypeName = format ["%1_%2_%3_%4", _unitTexturePrefix, _vestType, _vestSubtype, _camoType];
 			
@@ -217,11 +160,9 @@ if !(_currentVest == "") then {
 		};
 	};
 };
-// Please ignore this shit
-// It's for uh... debugging?
-// Yeah. Debugging...
+// please don't touch. this tells the camo coefficient modifier what camo is being used at a given time.
 private _playerVest = vest player;
-private _vestTempArray1 = [_playervest,"_"] call BIS_fnc_splitString;
+private _vestTempArray1 = [_playerVest,"_"] call BIS_fnc_splitString;
 camoRef0 = _vestTempArray1 # 0;
 camoRef3 = _vestTempArray1 # 3;
 
@@ -231,6 +172,7 @@ camoRef3 = _vestTempArray1 # 3;
 //
 // If the player has a compatible backpack, that backpack has its texture swapped.
 
+// _anprcBagTypes and _ilcsBagTypes are arrays for specific backpack subtype whitelists. should be a list of 
 private _anprcBagTypes = [
 	"521",
 	"521C",
@@ -249,7 +191,7 @@ private _ilcsBagTypes = [
 ];
 
 if !(_currentBackpack == "") then {	
-	if (_compatibleBackpacks find _currentBackpack != -1) then {
+	if (camoSwapCompatibleBackpacks find _currentBackpack != -1) then {
 
 		// "Which backpack is the user wearing?"
 		private _backpackTempArray = [_currentBackpack, "_"] call BIS_fnc_splitString;
@@ -294,7 +236,7 @@ if !(_currentHelmet == "") then {
 	// Reformat helmet as the base version for compatibility check
 	private _helmetBLK = format ["%1_%2_%3_BLK", _unitTexturePrefix, _helmetType, _helmetSubtype];
 	
-	if ((compatibleHelmets find _helmetBLK != -1) || (compatibleHelmets find (format ["%1_dp", _helmetBLK]) != -1)) then {
+	if ((camoSwapCompatibleHelmets find _helmetBLK != -1) || (compatibleHelmets find (format ["%1_dp", _helmetBLK]) != -1)) then {
 		// Ex: 82nd_HelmetType_Role_Camo
 		private _newHelmet = format ["%1_%2_%3_%4", _unitTexturePrefix, _helmetType, _helmetSubtype, _camoType];
 
@@ -318,7 +260,7 @@ if !(_currentFW == "") then {
 	private _fwSubType = _fwTempArray # 2;
 		
 	private _fwBLK = format ["%1_%2_%3_BLK", _unitTexturePrefix, _fwType, _fwSubType];
-	if (_compatibleFW find _fwBLK != -1) then {
+	if (camoSwapCompatibleFW find _fwBLK != -1) then {
 	
 		if (_fwType == "Bala") then {
 			if (_fwSubType == "G" || _fwSubType == "NoG" || _fwSubType == "BeastG" || _fwSubType == "BeastNoG") then {
@@ -349,7 +291,7 @@ if !(_currentHMD == "") then {
 	private _hmdSubType = _hmdTempArray # 2;
 		
 	private _hmdBLK = format ["%1_%2_%3_BLK", _unitTexturePrefix, _hmdType, _hmdSubType];
-	if (_compatibleHMD find _hmdBLK != -1) then {
+	if (camoSwapCompatibleHMD find _hmdBLK != -1) then {
 	
 		if (_hmdType == "CatHMD") then {
 			if (_hmdSubType == "Base") then {
@@ -405,7 +347,7 @@ if !(_currentRifle == "") then {
 	
 	// Checks rifle for compatibility
 	private _rifleBLK = format ["%1_%2_%3_BLK", _unitTexturePrefix, _rifleType, _rifleSubType];
-	if (_compatibleRifles find _rifleBLK != -1) then {
+	if (camoSwapCompatibleRifles find _rifleBLK != -1) then {
 		if (_normalVariants find _rifleType != -1) then {
 			if (_rifleSubType == "Experimental" || _rifleSubType == "Rifleman") then { // DO NOT USE FIND HERE!!!!!!!
 				private _rifleTypeName = format ["%1_%2_%3_%4", _unitTexturePrefix, _rifleType, _rifleSubType, _camoType];
