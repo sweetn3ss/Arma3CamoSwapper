@@ -63,3 +63,7 @@ Line 31 of `fn_camoChange.sqf` must be assigned to the folder in which your Unif
 
 Line 32 of `fn_camoChange.sqf` must be assigned to the location in which your backpack variant folders exist. ex: `82nd_Armor\data\backpacks`
 
+
+4. For the sake of compatibility, the script verifies the `UnitPrefix` of a classname at multiple points. This can be assigned here:
+
+Line 33 of `fn_camoChange.sqf` must be assigned to your unit or mod classname prefix. ex: `OPTRE`, `82nd`, `LS`, etc.
