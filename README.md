@@ -25,6 +25,8 @@ In its current form, the camo swapping portion of the script requires a handful 
 
 <b> 4. Your items must have a unit or mod classname prefix </b>
 
+<b> 5. This codebase requires [CBA](https://steamcommunity.com/sharedfiles/filedetails/?id=450814997) </b>
+
 
 1. In the case of helmets, vests, backpacks, facewear, nvg slot, and rifles, the following format must be used:
 
@@ -67,3 +69,6 @@ Line 32 of `fn_camoChange.sqf` must be assigned to the location in which your ba
 4. For the sake of compatibility, the script verifies the `UnitPrefix` of a classname at multiple points. This can be assigned here:
 
 Line 33 of `fn_camoChange.sqf` must be assigned to your unit or mod classname prefix. ex: `OPTRE`, `82nd`, `LS`, etc.
+
+
+5. Install the damn mod lol
