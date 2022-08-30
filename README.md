@@ -8,6 +8,8 @@ Black, Desert, Snow, Woodland
 
 Any code here is provided as-is, and any contributors to this repository are not responsible for harm done to any instance of Arma 3 installation. If you have questions that are not answered by documentation hosted in this repository, please post an issue report or message myself, Mesa, on [Steam](https://steamcommunity.com/id/systemofatable/)
 
+Modifications of any of this code for purpose of improvement, optimization, or otherwise expanding capacity is permitted, so long as the original authors are credited.
+
 <h2> Important Information! </h2>
 
 
@@ -44,3 +46,20 @@ The only exception to this is uniforms, which use the following format:
 `UnitPrefix_BDU_ItemSubType_Variance`
 
 `Variance` refers to things like rolled sleeves, shorts vs pants, the kinds of things that can be addressed via `hiddenSelections` with some BDU models.
+
+
+2. Because of how the script is currently set up, uniform and backpack textures must follow a certain naming standard:
+
+`UnitPrefix_BDU_All_UniformVariant_Camo`
+
+`All` needs to be removed, can't be assed to do it right now.
+
+`UniformVariant` is similar to variance as listed above. Rolled sleeves, etc.
+
+
+3. In cases where textures need to be directly used to retexture either a backpack or uniform, there are paths that need to be assigned. They are as follows:
+
+Line 31 of `fn_camoChange.sqf` must be assigned to the folder in which your Uniforms folder exists in. ex: `82nd_Armor\data\armors`
+
+Line 32 of `fn_camoChange.sqf` must be assigned to the location in which your backpack variant folders exist. ex: `82nd_Armor\data\backpacks`
+
