@@ -13,7 +13,7 @@ Modifications of any of this code for purpose of improvement, optimization, or o
 <h2> Important Information! </h2>
 
 
-The code contained herein was designed to work with Operation: TREBUCHET, a mod made by Article 2 Studios for the Arma 3 community. For the moment, it has been retrofitted to mostly be adjustable to other mods, though there will definitely be instances that scream "OPTRE" about the scripts, functions, config, etc. Apologies in advance for anyone intent on repurposing this code for other mods. Modifications are in progress to improve the overt modularity of this mod, though Arma 3 does have a great many limitations that must be worked within.
+The code contained herein was designed for use by the [82nd Special Operations Company](https://discord.gg/82ndsoc) to work with Operation: TREBUCHET, a mod made by Article 2 Studios for the Arma 3 community. For the moment, it has been retrofitted to mostly be adjustable to other mods, though there will definitely be instances that scream "OPTRE" about the scripts, functions, config, etc. Apologies in advance for anyone intent on repurposing this code for other mods. Modifications are in progress to improve the overt modularity of this mod, though Arma 3 does have a great many limitations that must be worked within.
 
 In its current form, the camo swapping portion of the script requires a handful of things be consistent. These are as follows:
 
