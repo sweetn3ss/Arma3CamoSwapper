@@ -54,7 +54,7 @@ switch (_selectedCamoType) do {
 						_camoType = "BLK"; // Fail safe default
 						
 						//Error message when invalid _camoType (due to some fuckup by someone extending this later)
-						hint "ERROR: Incorrect 82nd SOC Camo";
+						hint "ERROR: Incorrect Camo";
 						
 						//TODO: Return false for logging purposes
 						//false;
@@ -73,6 +73,7 @@ if !(_currentUniform == "") then {
 		private _uniformVariant   = _uniformTempArray # 3; // BASE, ROLLED
 		
 		// Short uses Rolled texture
+		// 77-79 can be deleted if intended uniforms don't have sameness of texture
 		if (_uniformVariant == "Short") then {
 			_uniformVariant = "ROLLED";
 		};
