@@ -28,7 +28,7 @@ class Extended_PostInit_EventHandlers {
 class cfgFunctions {
 	class CamoSwapDemo_github {
 		class Keys {
-			file="\CamoSwapDemo";
+			file="\CamoSwapDemo_github";
 			class camoCoef_Key {};
 			class camoCoefMod {};
 			class camoWL_Key {};
@@ -58,25 +58,25 @@ class cfgVehicles {
                     class Urban {
                         displayName="Urban";
                         condition="true";
-                        statement="[player, ""Urban""] call personalizeArmor_fnc_camoChange;";
+                        statement="[player, ""Urban""] call CamoSwapDemo_github_fnc_camoChange;";
                         icon = "";
                     };
                     class Desert {
                         displayName="Desert";
                         condition="true";
-                        statement="[_player, ""Desert""] call personalizeArmor_fnc_camoChange;";
+                        statement="[_player, ""Desert""] call CamoSwapDemo_github_fnc_camoChange;";
                         icon = "";
                     };
                     class Winter {
                         displayName="Winter";
                         condition="true";
-                        statement="[_player, ""Winter""] call personalizeArmor_fnc_camoChange;";
+                        statement="[_player, ""Winter""] call CamoSwapDemo_github_fnc_camoChange;";
                         icon = "";
                     };
                     class Woodland {
                         displayName="Woodland";
                         condition="true";
-                        statement="[_player, ""Woodland""] call personalizeArmor_fnc_camoChange;";
+                        statement="[_player, ""Woodland""] call CamoSwapDemo_github_fnc_camoChange;";
                         icon = "";
                     };
                 };
@@ -88,43 +88,43 @@ class cfgVehicles {
                     class AirRifleman {
                         displayName="Air Assault";
                         condition="true";
-                        statement="[player, ""AirAssault""] call personalizeArmor_fnc_vestChange;";
+                        statement="[player, ""AirAssault""] call CamoSwapDemo_github_fnc_vestChange;";
                         icon = "";
                     };
                     class AirCorpsman {
                         displayName="Corpsman";
                         condition="true";
-                        statement="[player, ""AirMedic""] call personalizeArmor_fnc_vestChange;";
+                        statement="[player, ""AirMedic""] call CamoSwapDemo_github_fnc_vestChange;";
                         icon = "";
                     };
                     class AirMG {
                         displayName="Autorifleman";
                         condition="true";
-                        statement="[player, ""AirMG""] call personalizeArmor_fnc_vestChange;";
+                        statement="[player, ""AirMG""] call CamoSwapDemo_github_fnc_vestChange;";
                         icon = "";
                     };
                     class AirGrenadier {
                         displayName="Grenadier";
                         condition="true";
-                        statement="[player, ""AirGrenadier""] call personalizeArmor_fnc_vestChange;";
+                        statement="[player, ""AirGrenadier""] call CamoSwapDemo_github_fnc_vestChange;";
                         icon = "";
                     };
                     class AirMarksman {
                         displayName="Marksman";
                         condition="true";
-                        statement="[player, ""AirMarksman""] call personalizeArmor_fnc_vestChange;";
+                        statement="[player, ""AirMarksman""] call CamoSwapDemo_github_fnc_vestChange;";
                         icon = "";
                     };
                     class AirBreacher {
                         displayName="Breacher";
                         condition="true";
-                        statement="[player, ""AirBreacher""] call personalizeArmor_fnc_vestChange;";
+                        statement="[player, ""AirBreacher""] call CamoSwapDemo_github_fnc_vestChange;";
                         icon = "";
                     };
                     class AirTeamLead {
 						displayName="Team Lead";
 						condition="true";
-						statement="[player, ""AirTeamLead""] call personalizeArmor_fnc_vestChange;";
+						statement="[player, ""AirTeamLead""] call CamoSwapDemo_github_fnc_vestChange;";
                         icon = "";
 					};
                 };
@@ -136,43 +136,43 @@ class cfgVehicles {
                     class TyrRifleman {
                         displayName="Rifleman";
                         condition="true";
-                        statement="[player, ""TyrRifleman""] call personalizeArmor_fnc_vestChange;";
+                        statement="[player, ""TyrRifleman""] call CamoSwapDemo_github_fnc_vestChange;";
                         icon = "";
                     };
                     class TyrCorpsman 
                         displayName="Corpsman";
                         condition="true";
-                        statement="[player, ""TyrCorpsman""] call personalizeArmor_fnc_vestChange;";
+                        statement="[player, ""TyrCorpsman""] call CamoSwapDemo_github_fnc_vestChange;";
                         icon = "";
                     };
                     class TyrMG {
                         displayName="Autorifleman";
                         condition="true";
-                        statement="[player, ""TyrMG""] call personalizeArmor_fnc_vestChange;";
+                        statement="[player, ""TyrMG""] call CamoSwapDemo_github_fnc_vestChange;";
                         icon = "";
                     };
                     class TyrGrenadier {
                         displayName="Grenadier";
                         condition="true";
-                        statement="[player, ""TyrGrenadier""] call personalizeArmor_fnc_vestChange;";
+                        statement="[player, ""TyrGrenadier""] call CamoSwapDemo_github_fnc_vestChange;";
                         icon = "";
                     };
                     class TyrMarksman {
                         displayName="Marksman";
                         condition="true";
-                        statement="[player, ""TyrMarksman""] call personalizeArmor_fnc_vestChange;";
+                        statement="[player, ""TyrMarksman""] call CamoSwapDemo_github_fnc_vestChange;";
                         icon = "";
                     };
                     class TyrBreacher {
                         displayName="Breacher";
                         condition="true";
-                        statement="[player, ""TyrBreacher""] call personalizeArmor_fnc_vestChange;";
+                        statement="[player, ""TyrBreacher""] call CamoSwapDemo_github_fnc_vestChange;";
                         icon = "";
                     };
                     class TyrTeamLead {
 						displayName="Team Lead";
 						condition="true";
-						statement="[player, ""TyrTeamLead""] call personalizeArmor_fnc_vestChange;";
+						statement="[player, ""TyrTeamLead""] call CamoSwapDemo_github_fnc_vestChange;";
 						icon = "";
 					};
                 };
@@ -184,43 +184,43 @@ class cfgVehicles {
                     class SlpRifleman {
                         displayName="Rifleman";
                         condition="true";
-                        statement="[player, ""SlpRifleman""] call personalizeArmor_fnc_vestChange;";
+                        statement="[player, ""SlpRifleman""] call CamoSwapDemo_github_fnc_vestChange;";
                         icon = "";
                     };
                     class SlpCorpsman {
                         displayName="Corpsman";
                         condition="true";
-                        statement="[player, ""SlpCorpsman""] call personalizeArmor_fnc_vestChange;";
+                        statement="[player, ""SlpCorpsman""] call CamoSwapDemo_github_fnc_vestChange;";
                         icon = "";
                     };
                     class SlpMG {
                         displayName="Autorifleman";
                         condition="true";
-                        statement="[player, ""SlpMG""] call personalizeArmor_fnc_vestChange;";
+                        statement="[player, ""SlpMG""] call CamoSwapDemo_github_fnc_vestChange;";
                         icon = "";
                     };
                     class SlpGrenadier {
                         displayName="Grenadier";
                         condition="true";
-                        statement="[player, ""SlpGrenadier""] call personalizeArmor_fnc_vestChange;";
+                        statement="[player, ""SlpGrenadier""] call CamoSwapDemo_github_fnc_vestChange;";
                         icon = "";
                     };
                     class SlpMarksman {
                         displayName="Marksman";
                         condition="true";
-                        statement="[player, ""SlpMarksman""] call personalizeArmor_fnc_vestChange;";
+                        statement="[player, ""SlpMarksman""] call CamoSwapDemo_github_fnc_vestChange;";
                         icon = "";
                     };
                     class SlpBreacher {
                         displayName="Breacher";
                         condition="true";
-                        statement="[player, ""SlpBreacher""] call personalizeArmor_fnc_vestChange;";
+                        statement="[player, ""SlpBreacher""] call CamoSwapDemo_github_fnc_vestChange;";
                         icon = "";
                     };
                     class SlpTeamLead {
 						displayName="Team Lead";
 						condition="true";
-						statement="[player, ""SlpTeamLead""] call personalizeArmor_fnc_vestChange;";
+						statement="[player, ""SlpTeamLead""] call CamoSwapDemo_github_fnc_vestChange;";
 						icon = "";
 					};
                 };
@@ -232,19 +232,19 @@ class cfgVehicles {
 					class Crew {
 						displayName="Crew";
 						condition="true";
-						statement="[player, ""Crew""] call personalizeArmor_fnc_vestChange;";
+						statement="[player, ""Crew""] call CamoSwapDemo_github_fnc_vestChange;";
                         icon = "";
 					};
 					class Aviation {
 						displayName="Aviation";
 						condition="true";
-						statement="[player, ""Aviation""] call personalizeArmor_fnc_vestChange;";
+						statement="[player, ""Aviation""] call CamoSwapDemo_github_fnc_vestChange;";
                         icon = "";
 					};
 					class PJ {
 						displayName="Aviaiton PJ";
 						condition="true";
-						statement="[player, ""PJ""] call personalizeArmor_fnc_vestChange;";
+						statement="[player, ""PJ""] call CamoSwapDemo_github_fnc_vestChange;";
                         icon = "";
 					};
 				};
@@ -256,19 +256,19 @@ class cfgVehicles {
                     class Base {
                         displayName="Default";
                         condition="true";
-                        statement="[player, ""Base""] call personalizeArmor_fnc_uniformChange;";
+                        statement="[player, ""Base""] call CamoSwapDemo_github_fnc_uniformChange;";
                         icon = "";
                     };
                     class Rolled {
                         displayName="Rolled Sleeves";
                         condition="true";
-                        statement="[_player, ""Rolled""] call personalizeArmor_fnc_uniformChange;";
+                        statement="[_player, ""Rolled""] call CamoSwapDemo_github_fnc_uniformChange;";
                         icon = "";
 					};
 					class Short {
 						displayName="Short Sleeves";
 						condition="true";
-						statement="[_player, ""Short""] call personalizeArmor_fnc_uniformChange;";
+						statement="[_player, ""Short""] call CamoSwapDemo_github_fnc_uniformChange;";
 						icon = "";
                     };
                 };
