@@ -26,8 +26,7 @@ params [
 // #################
 //
 // These constants are related to the setup of the mod(s) and the naming scheme of items
-private	_armorTextureRoot    = "82nd_Armor\data\armors";
-private	_unitTexturePrefix   = "82nd";
+private	_unitTexturePrefix   = ""; // change to mod or unit classname prefix. ex: "82nd"
 
 // ###############################
 // ### Compatibility Constants ###
