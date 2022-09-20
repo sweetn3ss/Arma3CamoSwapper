@@ -28,7 +28,7 @@ class Extended_PostInit_EventHandlers {
 class cfgFunctions {
 	class CamoSwapDemo_github {
 		class Keys {
-			file="\CamoSwapDemo_github";
+			file="\CamoSwapDemo_github\functions";
 			class camoCoef_Key {};
 			class camoCoefMod {};
 			class camoWL_Key {};
