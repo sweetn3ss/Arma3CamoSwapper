@@ -1,7 +1,7 @@
 #include "\a3\editor_f\Data\Scripts\dikCodes.h"
 
 [
-"82nd Keybinds",
+"Camo Keybinds",
 "autoCamo",
 "Determine Optimal Camo",
 {spawn CamoSwapDemo_github_fnc_autoCamo;},
