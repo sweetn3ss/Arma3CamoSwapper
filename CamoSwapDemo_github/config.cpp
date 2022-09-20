@@ -38,6 +38,7 @@ class cfgFunctions {
 			class camoChange {};
 			class vestChange {};
 			class uniformChange {};
+			class autoCamo {};
 		};
 	};
 };

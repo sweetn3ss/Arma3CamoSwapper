@@ -4,7 +4,7 @@
 "82nd Keybinds",
 "autoCamo",
 "Determine Optimal Camo",
-{[] execVM "82nd_CamoShiteDontTouch\autoCamo.sqf";},
+{spawn CamoSwapDemo_github_fnc_autoCamo;},
 ""
 ] call CBA_fnc_addKeybind;
 
